@@ -77,6 +77,32 @@ Linux:
 python main.py
 ```
 
+## Conclusion
+
+**We get the following results**
+
+- learning using experimental convolutional layers+poolings
+![image](https://github.com/user-attachments/assets/7416545b-f503-4fbf-b24c-848f08bc32a2)
+
+-learning using ResNet + fine-tuning
+![image](https://github.com/user-attachments/assets/7d93f623-e05e-47ff-bc18-087311cd41b3)
+
+For visual demonstration, the tuning models were trained on 20, 50 and 100 epochs, while the experimental convolutional neural network was trained on only 20 epochs.
+
+
+Despite fine-tuning the pre-trained ResNet-18 model with its convolutional layers frozen, the simple Convolutional Neural Network (CNN) achieved significantly better results. 
+This difference in performance can likely be attributed to several factors:
+
+> **1. Pre-trained ResNet on a Different Image Size**
+ResNet-18 was originally trained on another images, specifically from the ImageNet dataset. When applied to the CIFAR-10 dataset, which consists of smaller images (32x32 pixels), this mismatch in image size could significantly impact the model's ability to extract meaningful features. The pre-trained model may not have adapted well to the smaller image dimensions of CIFAR-10, which led to suboptimal performance.
+
+>**2. Only the Fully Connected Layer Was Fine-Tuned**
+During the fine-tuning process, only the last fully connected layer of the ResNet model were updated while the convolutional layers remained frozen. As the convolutional layers are essential for feature extraction, this limited fine-tuning may have hindered the model's ability to fully adapt to the specific characteristics of the CIFAR-10 dataset. A more comprehensive fine-tuning approach that includes adjusting the convolutional layers might have improved the model's performance.
+
+>**3. Hyperparameter Optimization**
+The fine-tuning process may not have been fully optimized for the CIFAR-10 task. Hyperparameters such as the learning rate, number of epochs, and batch size could potentially need further adjustment. More experimentation with different settings might yield better results and enhance the fine-tuning performance of the ResNet model.
+
+
 
 
 ## License
