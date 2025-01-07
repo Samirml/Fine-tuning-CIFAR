@@ -1,6 +1,0 @@
-torch
-torchvision
-albumentations
-matplotlib
-seaborn
-tqdm
