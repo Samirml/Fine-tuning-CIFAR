@@ -35,10 +35,10 @@ The CIFAR-10 dataset is loaded and transformed into tensors with augmentation (r
 For the SimpleCNNModel, the network is trained from scratch using the train_loop() function.
 For the ModifiedResNet18, the model is fine-tuned using the fine_tune_loop() function. The convolutional layers are frozen, and only the fully connected layers are trained.
 
-**Evaluation:** 
+**Evaluation:**       
 After every few batches, the validation accuracy is computed to track the model’s performance on unseen data.
 
-**Visualization:**
+**Visualization:**        
 The plot_training_results() function visualizes the training loss and validation accuracy over epochs.
 The plot_fine_tuning_results() function compares fine-tuning results across different training durations.
 
